@@ -1,0 +1,12 @@
+packages:
+  "framer-motion": "For smooth step transitions in the multi-step quote form and page animations"
+  "date-fns": "For date formatting in the quote form"
+
+images:
+  - path: "artifacts/moving-easy/public/images/hero-bg.png"
+    description: "A professional, stylized background image for a moving company. Subtle green tones, abstract shapes suggesting motion and logistics, perhaps a very faint silhouette of a modern moving truck. Clean, trustworthy, spacious, suitable for text overlay."
+    aspect_ratio: "16:9"
+
+notes:
+  - "Using Lucide React for all icons."
+  - "Form state is managed locally for this demo, no real API endpoints are called during submission."
