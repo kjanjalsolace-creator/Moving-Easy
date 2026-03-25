@@ -27,8 +27,12 @@ export default function BranchesPage() {
                     <h2 className="text-2xl font-bold tracking-tight text-black">Auckland</h2>
                     <p className="text-sm text-muted-foreground mt-1">Manukau</p>
                   </div>
-                  <div className="h-12 w-12 rounded-xl bg-muted/30 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-black" />
+                  <div className="h-12 w-12 rounded-xl bg-muted/30 flex items-center justify-center overflow-hidden border border-border/60">
+                    <img
+                      src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?w=240&q=80&auto=format&fit=crop"
+                      alt="Auckland branch"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 </div>
 

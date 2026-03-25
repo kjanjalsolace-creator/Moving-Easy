@@ -1,7 +1,6 @@
 import { Link } from "wouter";
+import { useMemo, useState } from "react";
 import { 
-  MapPin, 
-  Calendar, 
   ArrowRight, 
   ShieldCheck, 
   Home, 
@@ -18,76 +17,89 @@ import {
   Star
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { OperatorCard } from "@/components/OperatorCard";
 import { ReviewCard } from "@/components/ReviewCard";
 
 export default function HomePage() {
+  const [heroSlideIdx, setHeroSlideIdx] = useState(0);
+
+  const heroImages = useMemo(
+    () => [
+      "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600&q=80&auto=format&fit=crop",
+    ],
+    []
+  );
+
+  const heroImage = heroImages[heroSlideIdx % heroImages.length];
+
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-foreground">
       <Navbar />
 
-      <main className="flex-grow pt-20">
+      <main className="flex-grow">
         {/* A) HERO SECTION */}
-        <section className="py-20 md:py-32 bg-white relative">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight mb-6 max-w-4xl leading-tight">
-              Moving Easy Limited - Two Movers And A Truck
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl">
-              Make your furniture moving and freight services easy across New Zealand.
-            </p>
+        <section className="py-10 md:py-16 bg-white relative">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative rounded-3xl bg-muted/10 border border-border/60">
+              <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] items-stretch">
+                <div className="relative z-10 p-6 md:p-6">
+                  <div className="w-full md:w-[420px]">
+                    <div className="bg-white rounded-2xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-6">
+                      <h1 className="text-3xl md:text-4xl font-bold text-black tracking-tight leading-tight">
+                        NZ’s best moving teams — ready for your move
+                      </h1>
+                      <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">
+                        Moving Easy Limited provides low-cost moving specialists for Home Moves, Furniture Moves, Office Relocation, and more.
+                      </p>
 
-            {/* Quick Quote Widget */}
-            <div className="bg-white p-3 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-border/50 max-w-4xl w-full flex flex-col md:flex-row gap-3">
-              <div className="flex-1 relative">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                <Input 
-                  placeholder="Moving from..." 
-                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl"
-                />
-              </div>
-              <div className="flex-1 relative">
-                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                <Input 
-                  placeholder="Moving to..." 
-                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl"
-                />
-              </div>
-              <div className="flex-1 relative hidden sm:block">
-                <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                <Input 
-                  type="date"
-                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl text-foreground"
-                />
-              </div>
-              <Link href="/quote" className="md:w-auto w-full">
-                <Button className="h-14 px-8 w-full bg-black hover:bg-black/90 text-white font-semibold text-lg rounded-xl transition-all">
-                  Quote
-                </Button>
-              </Link>
-            </div>
+                      <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <Star className="h-4 w-4 text-black fill-black" />
+                          <span className="font-semibold text-black">4.8</span>
+                        </span>
+                        <span>•</span>
+                        <span>NZ-wide service</span>
+                        <span>•</span>
+                        <span className="text-black font-semibold">$60/HH</span>
+                      </div>
 
-            {/* Trust signals */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm font-medium text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-black fill-black" />
-                  ))}
+                      <div className="mt-5">
+                        <Link href="/quote" className="block">
+                          <Button className="h-12 w-full bg-black hover:bg-black/90 text-white font-semibold rounded-xl">
+                            Get Quote
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-black font-semibold">$60/HH</span> Starting Rate
+
+                <div className="relative min-h-[320px] md:min-h-[520px]">
+                  <img
+                    src={heroImage}
+                    alt="Moving truck ready for service"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-transparent" />
+
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2">
+                    <button
+                      type="button"
+                      onClick={() => setHeroSlideIdx((i) => (i + 1) % heroImages.length)}
+                      className="h-12 w-12 rounded-lg bg-white/90 border border-white/60 shadow-sm flex items-center justify-center hover:bg-white transition-colors"
+                      aria-label="Next hero image"
+                    >
+                      <ArrowRight className="h-6 w-6 text-black" />
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-black" />
-                <span className="text-black font-semibold">NZ-wide</span> Service Area
-              </div>
-              <div className="flex items-center gap-2">
-                <Truck className="h-5 w-5 text-black" />
-                <span className="text-black font-semibold">100+</span> movers network
-              </div>
+
+              <div className="hidden md:block h-6" />
             </div>
           </div>
         </section>
@@ -104,9 +116,10 @@ export default function HomePage() {
                 { icon: Briefcase, label: "Storage Services" },
                 { icon: Sofa, label: "Junk Removal" },
                 { icon: Truck, label: "Office Relocation" },
+                { icon: Trash2, label: "Lawn Mowing Services" },
+                { icon: BadgeDollarSign, label: "Cleaning Services" },
+                { icon: Music, label: "Free Winz Quotes" },
                 { icon: PackageOpen, label: "Freight Services" },
-                { icon: Music, label: "Free WINZ Quotes" },
-                { icon: Trash2, label: "Weekday Discount" },
               ].map((service, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border border-border flex flex-col items-center justify-center text-center gap-4 hover:shadow-md transition-shadow cursor-pointer group">
                   <div className="p-3 bg-muted/30 rounded-full group-hover:bg-black group-hover:text-white transition-colors">
@@ -124,30 +137,30 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Welcome to Moving Easy Limited</h2>
-              <p className="text-lg text-muted-foreground">One stop shop for furniture moving and freight needs</p>
+              <p className="text-lg text-muted-foreground">Sample customer content placeholder.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <ReviewCard 
-                name="Moving Easy Limited"
-                location="Auckland, New Zealand"
+                name="Customer Name"
+                location="City"
                 rating={5}
-                date="Service update"
-                text="Moving Easy Limited has set its goals towards the best customer service as an inter state and outer state furniture moving and freight company."
+                date="Recent review"
+                text="Dummy testimonial text. Replace with real review content from your source when available."
               />
               <ReviewCard 
-                name="Free Moving Estimate"
-                location="Nationwide"
+                name="Customer Name"
+                location="City"
                 rating={5}
-                date="Book today"
-                text="Are you moving to a new house and exploring your relocation options? Request your free moving estimate today and book your move."
+                date="Recent review"
+                text="Dummy testimonial text. Replace with real review content from your source when available."
               />
               <ReviewCard 
-                name="Service Coverage"
-                location="Inside and Outside Auckland"
+                name="Customer Name"
+                location="City"
                 rating={4}
-                date="Current offers"
-                text="Services include moving, packing, storage, manpower service, junk removal, WINZ quotes, 10% student discount, and weekday discounts."
+                date="Recent review"
+                text="Dummy testimonial text. Replace with real review content from your source when available."
               />
             </div>
           </div>
@@ -196,20 +209,20 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border/30">
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">1-2 hrs</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Per Room Guide</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">12+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Placeholder Metric</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">100+</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Mover Network</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">34+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Placeholder Metric</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">$60/HH</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Starting Price</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">56+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Placeholder Metric</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">1 Day</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Local Completion</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">78+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Placeholder Metric</p>
               </div>
             </div>
           </div>
@@ -225,9 +238,9 @@ export default function HomePage() {
               <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                 <div className="w-full md:w-1/2 relative">
                   <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform -rotate-2"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" 
-                    alt="Create a listing" 
+                    <img 
+                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80&auto=format&fit=crop" 
+                    alt="Household moving truck and crew" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
                   />
                 </div>
@@ -245,8 +258,8 @@ export default function HomePage() {
                 <div className="w-full md:w-1/2 relative">
                   <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform rotate-2"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&q=80" 
-                    alt="Compare quotes" 
+                    src="https://images.unsplash.com/photo-1616627986114-3c1d0d3ee8b1?w=1200&q=80&auto=format&fit=crop" 
+                    alt="Packed boxes ready for transport" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
                   />
                 </div>
@@ -264,8 +277,8 @@ export default function HomePage() {
                 <div className="w-full md:w-1/2 relative">
                   <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform -rotate-2"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" 
-                    alt="Book and move" 
+                    src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=1200&q=80&auto=format&fit=crop" 
+                    alt="Calendar and planning a moving date" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
                   />
                 </div>
@@ -336,10 +349,10 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { title: "Lawn Mowing Services", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" },
-                { title: "Cleaning Services", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" },
-                { title: "Make a Booking", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
-                { title: "Contact Us", img: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80" }
+                { title: "Lawn Mowing Services", img: "https://images.unsplash.com/photo-1599685315640-9ceab2a6a5c0?w=1200&q=80&auto=format&fit=crop" },
+                { title: "Cleaning Services", img: "https://images.unsplash.com/photo-1581579184683-0b7f4b9b6b76?w=1200&q=80&auto=format&fit=crop" },
+                { title: "Make a Booking", img: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=1200&q=80&auto=format&fit=crop" },
+                { title: "Contact Us", img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80&auto=format&fit=crop" }
               ].map((article, i) => (
                 <div key={i} className="group cursor-pointer">
                   <div className="overflow-hidden rounded-xl mb-4 border border-border">

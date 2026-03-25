@@ -7,16 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 const SERVICES = [
-  { id: 'house-furniture-moving', label: 'House Furniture Moving', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'Full-service household moving across Auckland and New Zealand.', hasSub: true },
-  { id: 'packing-services', label: 'Packing Services', image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80', description: 'Professional packing materials and fragile packing support.', hasSub: true },
-  { id: 'storage-services', label: 'Storage Services', image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80', description: 'Short-term storage solutions based on customer needs.', hasSub: true },
-  { id: 'junk-removal', label: 'Junk Removal', image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80', description: 'Eco-friendly furniture disposal and pickup services.', hasSub: false },
-  { id: 'office-relocation', label: 'Office Relocation', image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&q=80', description: 'Reliable office and workspace relocation support.', hasSub: false },
-  { id: 'freight-services', label: 'Freight Services', image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&q=80', description: 'Freight delivery services inside and outside Auckland.', hasSub: true },
-  { id: 'free-winz-quotes', label: 'Free WINZ Quotes', image: 'https://images.unsplash.com/photo-1512733596533-7b46b5c3a4b0?w=600&q=80', description: 'Contact us for free WINZ moving quotes.', hasSub: true },
-  { id: 'lawn-mowing', label: 'Lawn Mowing Services', image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=600&q=80', description: 'Additional property maintenance support services.', hasSub: false, active: true },
-  { id: 'cleaning-services', label: 'Cleaning Services', image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=600&q=80', description: 'Cleaning services to help complete your move.', hasSub: false },
-  { id: 'make-a-booking', label: 'Make A Booking', image: 'https://images.unsplash.com/photo-1565791380713-1756b9a05343?w=600&q=80', description: 'Book your move today with our support team.', hasSub: false },
+  { id: 'house-furniture-moving', label: 'House Furniture Moving', image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&q=80&auto=format&fit=crop', description: 'Full-service household moving across Auckland and New Zealand.', hasSub: true },
+  { id: 'packing-services', label: 'Packing Services', image: 'https://images.unsplash.com/photo-1616627986114-3c1d0d3ee8b1?w=1200&q=80&auto=format&fit=crop', description: 'Professional packing materials and fragile packing support.', hasSub: true },
+  { id: 'storage-services', label: 'Storage Services', image: 'https://images.unsplash.com/photo-1604335399105-0f25c9a4b7a9?w=1200&q=80&auto=format&fit=crop', description: 'Short-term storage solutions based on customer needs.', hasSub: true },
+  { id: 'junk-removal', label: 'Junk Removal', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80&auto=format&fit=crop', description: 'Eco-friendly furniture disposal and pickup services.', hasSub: false },
+  { id: 'office-relocation', label: 'Office Relocation', image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80&auto=format&fit=crop', description: 'Reliable office and workspace relocation support.', hasSub: false },
+  { id: 'lawn-mowing', label: 'Lawn Mowing Services', image: 'https://images.unsplash.com/photo-1599685315640-9ceab2a6a5c0?w=1200&q=80&auto=format&fit=crop', description: 'Additional property maintenance support services.', hasSub: false, active: true },
+  { id: 'cleaning-services', label: 'Cleaning Services', image: 'https://images.unsplash.com/photo-1581579184683-0b7f4b9b6b76?w=1200&q=80&auto=format&fit=crop', description: 'Cleaning services to help complete your move.', hasSub: false },
+  { id: 'free-winz-quotes', label: 'Free Winz Quotes', image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80&auto=format&fit=crop', description: 'Contact us for free WINZ moving quotes.', hasSub: true },
+  { id: 'freight-services', label: 'Freight Services', image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80&auto=format&fit=crop', description: 'Freight delivery services inside and outside Auckland.', hasSub: true },
 ];
 
 export function Navbar() {
@@ -35,7 +34,7 @@ export function Navbar() {
   const activeService = SERVICES.find(s => s.id === hoveredServiceId) || SERVICES[0];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border transition-all duration-300">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-border transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -43,7 +42,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center gap-2 group">
               <Truck className="h-6 w-6 text-black" strokeWidth={1.5} />
               <span className="text-xl font-semibold tracking-tight text-black">
-                Moving Easy
+                Moving Easy Limited
               </span>
             </Link>
           </div>
@@ -103,9 +102,6 @@ export function Navbar() {
             
             <Link href="/" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
               About Us
-            </Link>
-            <Link href="/" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
-              Services
             </Link>
             <Link href="/branches" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
               Branches
@@ -171,7 +167,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 w-full bg-white border-b shadow-lg py-4 px-4 flex flex-col gap-4 animate-in slide-in-from-top-2">
           <div className="font-semibold px-4 text-sm text-muted-foreground uppercase tracking-wider mb-2">Services</div>
-          {SERVICES.slice(0, 5).map(s => (
+          {SERVICES.map(s => (
             <Link key={s.id} href="/" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
               {s.label}
             </Link>
@@ -179,9 +175,6 @@ export function Navbar() {
           <div className="h-px bg-border my-2"></div>
           <Link href="/" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
             About Us
-          </Link>
-          <Link href="/" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
-            Services
           </Link>
           <Link href="/branches" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
             Branches

@@ -11,7 +11,7 @@ export function Footer() {
             <div className="flex items-center gap-2 mb-6">
               <Truck className="h-6 w-6 text-white" strokeWidth={1.5} />
               <span className="text-xl font-semibold tracking-tight text-white">
-                Moving Easy
+                Moving Easy Limited
               </span>
             </div>
             <p className="text-sm text-white/60 mb-8 max-w-xs leading-relaxed">
