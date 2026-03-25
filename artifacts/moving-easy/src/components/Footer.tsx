@@ -15,7 +15,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-white/60 mb-8 max-w-xs leading-relaxed">
-              New Zealand's trusted marketplace connecting you directly with verified truck owner-operators for local and nationwide moves.
+              Moving Easy Limited provides furniture moving and freight services across Auckland and throughout New Zealand.
             </p>
             <div className="flex gap-5">
               <a href="#" className="text-white/60 hover:text-white transition-colors">
@@ -32,25 +32,25 @@ export function Footer() {
 
           {/* Links Col 1 */}
           <div>
-            <h4 className="text-white font-semibold mb-6 tracking-tight">Customers</h4>
+            <h4 className="text-white font-semibold mb-6 tracking-tight">Services</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">How it works</Link></li>
-              <li><Link href="/quote" className="text-sm text-white/60 hover:text-white transition-colors">Get Quotes</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Find a Mover</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Trust & Safety</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Customer FAQs</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">House Furniture Moving</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Packing Services</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Storage Services</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Junk Removal</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Freight Services</Link></li>
             </ul>
           </div>
 
           {/* Links Col 2 */}
           <div>
-            <h4 className="text-white font-semibold mb-6 tracking-tight">Drivers</h4>
+            <h4 className="text-white font-semibold mb-6 tracking-tight">Offers</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Register as a Driver</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Driver Benefits</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Success Stories</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Driver App</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Driver FAQs</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Free WINZ Quotes</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">10% Student Discount</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Weekday Discount</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Make A Booking</Link></li>
+              <li><Link href="/quote" className="text-sm text-white/60 hover:text-white transition-colors">Quote Form</Link></li>
             </ul>
           </div>
 
@@ -59,10 +59,11 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6 tracking-tight">Company</h4>
             <ul className="space-y-4">
               <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Contact Us</Link></li>
+              <li><a href="tel:+642041440090" className="text-sm text-white/60 hover:text-white transition-colors">02041440090</a></li>
+              <li><a href="mailto:info@movingeasy.co.nz" className="text-sm text-white/60 hover:text-white transition-colors">info@movingeasy.co.nz</a></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">Manukau, Auckland</Link></li>
+              <li><Link href="/" className="text-sm text-white/60 hover:text-white transition-colors">New Zealand</Link></li>
             </ul>
           </div>
         </div>

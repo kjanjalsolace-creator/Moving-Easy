@@ -2,24 +2,28 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Truck, Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const SERVICES = [
-  { id: 'moving-companies', label: 'Moving companies', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'Find reliable moving companies for your next big move.', hasSub: true },
-  { id: 'car-transport', label: 'Car transport', image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80', description: 'Safe and secure vehicle transportation across NZ.', hasSub: true },
-  { id: 'motorcycle-transport', label: 'Motorcycle transport', image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80', description: 'Specialised transport for motorcycles and scooters.', hasSub: true },
-  { id: 'furniture-removals', label: 'Furniture removals', image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80', description: 'Careful handling of your precious furniture pieces.', hasSub: false },
-  { id: 'pet-transport', label: 'Pet transport', image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&q=80', description: 'Comfortable and safe travel for your furry friends.', hasSub: false },
-  { id: 'man-with-van', label: 'Man with a Van', image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&q=80', description: 'Perfect for small moves and single item deliveries.', hasSub: true },
-  { id: 'piano-movers', label: 'Piano movers', image: 'https://images.unsplash.com/photo-1512733596533-7b46b5c3a4b0?w=600&q=80', description: 'Expert piano moving with specialised equipment.', hasSub: true },
-  { id: 'trademe-delivery', label: 'TradeMe delivery', image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=600&q=80', description: 'Quick and affordable delivery for your TradeMe purchases.', hasSub: false, active: true },
-  { id: 'boat-transport', label: 'Boat transport', image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=600&q=80', description: 'Professional boat haulage and relocation services.', hasSub: false },
-  { id: 'machinery-transport', label: 'Machinery Transport', image: 'https://images.unsplash.com/photo-1565791380713-1756b9a05343?w=600&q=80', description: 'Heavy machinery and equipment transport solutions.', hasSub: false },
+  { id: 'house-furniture-moving', label: 'House Furniture Moving', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80', description: 'Full-service household moving across Auckland and New Zealand.', hasSub: true },
+  { id: 'packing-services', label: 'Packing Services', image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80', description: 'Professional packing materials and fragile packing support.', hasSub: true },
+  { id: 'storage-services', label: 'Storage Services', image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80', description: 'Short-term storage solutions based on customer needs.', hasSub: true },
+  { id: 'junk-removal', label: 'Junk Removal', image: 'https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=600&q=80', description: 'Eco-friendly furniture disposal and pickup services.', hasSub: false },
+  { id: 'office-relocation', label: 'Office Relocation', image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&q=80', description: 'Reliable office and workspace relocation support.', hasSub: false },
+  { id: 'freight-services', label: 'Freight Services', image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=600&q=80', description: 'Freight delivery services inside and outside Auckland.', hasSub: true },
+  { id: 'free-winz-quotes', label: 'Free WINZ Quotes', image: 'https://images.unsplash.com/photo-1512733596533-7b46b5c3a4b0?w=600&q=80', description: 'Contact us for free WINZ moving quotes.', hasSub: true },
+  { id: 'lawn-mowing', label: 'Lawn Mowing Services', image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=600&q=80', description: 'Additional property maintenance support services.', hasSub: false, active: true },
+  { id: 'cleaning-services', label: 'Cleaning Services', image: 'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=600&q=80', description: 'Cleaning services to help complete your move.', hasSub: false },
+  { id: 'make-a-booking', label: 'Make A Booking', image: 'https://images.unsplash.com/photo-1565791380713-1756b9a05343?w=600&q=80', description: 'Book your move today with our support team.', hasSub: false },
 ];
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isServicesHovered, setIsServicesHovered] = useState(false);
   const [hoveredServiceId, setHoveredServiceId] = useState(SERVICES[0].id);
+  const [loginOpen, setLoginOpen] = useState(false);
   const [location] = useLocation();
 
   // Close mobile menu on route change
@@ -98,23 +102,55 @@ export function Navbar() {
             </div>
             
             <Link href="/" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
-              How It Works
+              About Us
             </Link>
             <Link href="/" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
-              Drivers
+              Services
+            </Link>
+            <Link href="/branches" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
+              Branches
             </Link>
             <Link href="/" className="px-4 text-sm font-medium text-foreground hover:text-black transition-colors">
-              Resources
+              Contact Us
             </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" className="text-foreground hover:text-black hover:bg-muted font-medium">
-              Log In
-            </Button>
-            <Link href="/quote">
+            <Dialog open={loginOpen} onOpenChange={setLoginOpen}>
+              <DialogTrigger asChild>
+                <Button variant="ghost" className="text-foreground hover:text-black hover:bg-muted font-medium">
+                  Log In
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md rounded-2xl">
+                <DialogHeader>
+                  <DialogTitle>Log in</DialogTitle>
+                  <DialogDescription>Enter your details to continue.</DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="loginEmail">Email</Label>
+                    <Input id="loginEmail" type="email" placeholder="you@example.com" className="h-11" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="loginPassword">Password</Label>
+                    <Input id="loginPassword" type="password" placeholder="••••••••" className="h-11" />
+                  </div>
+                </div>
+                <DialogFooter className="mt-2">
+                  <Button variant="outline" type="button" onClick={() => setLoginOpen(false)}>
+                    Cancel
+                  </Button>
+                  <Button type="button" className="bg-black hover:bg-black/90 text-white" onClick={() => setLoginOpen(false)}>
+                    Continue
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+
+            <Link href="/booking">
               <Button className="bg-black hover:bg-black/90 text-white font-semibold px-6 rounded-md">
-                Get a Free Quote
+                Make a Booking
               </Button>
             </Link>
           </div>
@@ -142,18 +178,28 @@ export function Navbar() {
           ))}
           <div className="h-px bg-border my-2"></div>
           <Link href="/" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
-            How It Works
+            About Us
           </Link>
           <Link href="/" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
-            Drivers
+            Services
+          </Link>
+          <Link href="/branches" className="px-4 py-2 text-foreground hover:bg-muted rounded-md font-medium">
+            Branches
           </Link>
           <div className="h-px bg-border my-2"></div>
-          <Button variant="outline" className="w-full justify-center" onClick={() => setMobileMenuOpen(false)}>
+          <Button
+            variant="outline"
+            className="w-full justify-center"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              setLoginOpen(true);
+            }}
+          >
             Log In
           </Button>
-          <Link href="/quote" className="w-full">
+          <Link href="/booking" className="w-full">
             <Button className="w-full bg-black text-white hover:bg-black/90 font-semibold">
-              Get a Free Quote
+              Make a Booking
             </Button>
           </Link>
         </div>

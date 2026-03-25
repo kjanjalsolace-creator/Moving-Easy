@@ -34,10 +34,10 @@ export default function HomePage() {
         <section className="py-20 md:py-32 bg-white relative">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight mb-6 max-w-4xl leading-tight">
-              New Zealand's expert way to move for less
+              Moving Easy Limited - Two Movers And A Truck
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl">
-              Connect directly with verified truck owner-operators.
+              Make your furniture moving and freight services easy across New Zealand.
             </p>
 
             {/* Quick Quote Widget */}
@@ -65,7 +65,7 @@ export default function HomePage() {
               </div>
               <Link href="/quote" className="md:w-auto w-full">
                 <Button className="h-14 px-8 w-full bg-black hover:bg-black/90 text-white font-semibold text-lg rounded-xl transition-all">
-                  Get Quotes
+                  Quote
                 </Button>
               </Link>
             </div>
@@ -78,15 +78,15 @@ export default function HomePage() {
                     <Star key={i} className="h-4 w-4 text-black fill-black" />
                   ))}
                 </div>
-                <span className="text-black font-semibold">4.8/5</span> Rating
+                <span className="text-black font-semibold">$60/HH</span> Starting Rate
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="h-5 w-5 text-black" />
-                <span className="text-black font-semibold">2,400+</span> moves completed
+                <span className="text-black font-semibold">NZ-wide</span> Service Area
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="h-5 w-5 text-black" />
-                <span className="text-black font-semibold">500+</span> drivers
+                <span className="text-black font-semibold">100+</span> movers network
               </div>
             </div>
           </div>
@@ -95,18 +95,18 @@ export default function HomePage() {
         {/* B) MOST POPULAR SERVICES */}
         <section className="py-20 bg-muted/10 border-t border-border/50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center tracking-tight">Our most popular services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center tracking-tight">Our services include</h2>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
-                { icon: Home, label: "House Moving" },
-                { icon: Building2, label: "Apartment Moving" },
-                { icon: Briefcase, label: "Office Relocation" },
-                { icon: Sofa, label: "Furniture Removal" },
-                { icon: Truck, label: "Man with a Van" },
-                { icon: PackageOpen, label: "TradeMe Delivery" },
-                { icon: Music, label: "Piano Moving" },
-                { icon: Trash2, label: "Rubbish Removal" },
+                { icon: Home, label: "House Furniture Moving" },
+                { icon: Building2, label: "Packing Services" },
+                { icon: Briefcase, label: "Storage Services" },
+                { icon: Sofa, label: "Junk Removal" },
+                { icon: Truck, label: "Office Relocation" },
+                { icon: PackageOpen, label: "Freight Services" },
+                { icon: Music, label: "Free WINZ Quotes" },
+                { icon: Trash2, label: "Weekday Discount" },
               ].map((service, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border border-border flex flex-col items-center justify-center text-center gap-4 hover:shadow-md transition-shadow cursor-pointer group">
                   <div className="p-3 bg-muted/30 rounded-full group-hover:bg-black group-hover:text-white transition-colors">
@@ -123,31 +123,31 @@ export default function HomePage() {
         <section className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">What do our customers say?</h2>
-              <p className="text-lg text-muted-foreground">4.8 out of 5 from 500+ reviews</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Welcome to Moving Easy Limited</h2>
+              <p className="text-lg text-muted-foreground">One stop shop for furniture moving and freight needs</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <ReviewCard 
-                name="Jane R."
-                location="Auckland"
+                name="Moving Easy Limited"
+                location="Auckland, New Zealand"
                 rating={5}
-                date="2 weeks ago"
-                text="Made our Auckland move so easy! Mike was professional and careful with our furniture. Got 5 quotes in under an hour and chose the best fit."
+                date="Service update"
+                text="Moving Easy Limited has set its goals towards the best customer service as an inter state and outer state furniture moving and freight company."
               />
               <ReviewCard 
-                name="Tom H."
-                location="Wellington"
+                name="Free Moving Estimate"
+                location="Nationwide"
                 rating={5}
-                date="1 month ago"
-                text="Sarah was punctual and incredibly efficient. Saved $400 compared to the traditional removal company we used last time. Highly recommend!"
+                date="Book today"
+                text="Are you moving to a new house and exploring your relocation options? Request your free moving estimate today and book your move."
               />
               <ReviewCard 
-                name="Emma L."
-                location="Christchurch"
+                name="Service Coverage"
+                location="Inside and Outside Auckland"
                 rating={4}
-                date="3 months ago"
-                text="Used Moving Easy twice now. Always great drivers, always on time, always reasonable prices. The communication directly with the driver gives peace of mind."
+                date="Current offers"
+                text="Services include moving, packing, storage, manpower service, junk removal, WINZ quotes, 10% student discount, and weekday discounts."
               />
             </div>
           </div>
@@ -156,36 +156,36 @@ export default function HomePage() {
         {/* D) GO ABOVE & BEYOND */}
         <section className="py-24 bg-[#0a0a0a] text-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">We go above and beyond</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">The first step is choosing us</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
               <div className="flex flex-col items-center text-center">
                 <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
                   <ShieldCheck className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Verified operators</h3>
-                <p className="text-white/70">Every driver on our platform is carefully vetted for your peace of mind.</p>
+                <h3 className="text-xl font-semibold mb-3">Long-distance expertise</h3>
+                <p className="text-white/70">We have proudly moved New Zealanders all over the country with a network of more than 100 movers.</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
                   <MessageSquare className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Direct communication</h3>
-                <p className="text-white/70">Chat directly with drivers to discuss details before you book.</p>
+                <h3 className="text-xl font-semibold mb-3">Care for prized possessions</h3>
+                <p className="text-white/70">We understand how important your household items are and handle every move with extra care.</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
                   <BadgeDollarSign className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Transparent pricing</h3>
-                <p className="text-white/70">No hidden fees or surprise charges. The quote you accept is what you pay.</p>
+                <h3 className="text-xl font-semibold mb-3">Licensed and protected</h3>
+                <p className="text-white/70">Our experienced professionals are fully licensed and protected when moving what matters to you.</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
                   <Map className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">NZ-wide coverage</h3>
-                <p className="text-white/70">From Cape Reinga to Bluff, we've got independent movers ready to help.</p>
+                <h3 className="text-xl font-semibold mb-3">Local or cross-country</h3>
+                <p className="text-white/70">Whether your move is local or cross-country, we make relocation easier and more reliable.</p>
               </div>
             </div>
           </div>
@@ -196,20 +196,20 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border/30">
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">2,400+</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Moves Completed</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">1-2 hrs</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Per Room Guide</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">500+</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Active Drivers</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">100+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Mover Network</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">4.8<span className="text-2xl">★</span></p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Average Rating</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">$60/HH</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Starting Price</p>
               </div>
               <div className="text-center px-4">
-                <p className="text-4xl md:text-5xl font-bold text-black mb-2">NZ</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Wide Coverage</p>
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">1 Day</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Local Completion</p>
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function HomePage() {
         {/* F) HOW IT WORKS */}
         <section className="py-24 bg-white overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-5xl font-bold mb-20 text-center tracking-tight">How Moving Easy works</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-20 text-center tracking-tight">How long does it take to move locally</h2>
             
             <div className="space-y-24">
               {/* Step 1 */}
@@ -233,9 +233,9 @@ export default function HomePage() {
                 </div>
                 <div className="w-full md:w-1/2">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">1</div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Create your listing</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">1. The size of your household</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Tell us what you're moving, where it's going, and when. Add photos and details to get the most accurate quotes. It's completely free to post.
+                    If you are transporting and packing a lot of items, your move may take longer. Smaller homes and apartments are usually faster to complete.
                   </p>
                 </div>
               </div>
@@ -252,9 +252,9 @@ export default function HomePage() {
                 </div>
                 <div className="w-full md:w-1/2">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">2</div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Compare quotes</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">2. The items you are moving</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Verified owner-operators in your area will send you competitive quotes. Review their profiles, read past customer feedback, and message them directly with any questions.
+                    Heavy and delicate items such as pianos, cabinets, and freezers need extra care and can increase the total moving time.
                   </p>
                 </div>
               </div>
@@ -271,9 +271,9 @@ export default function HomePage() {
                 </div>
                 <div className="w-full md:w-1/2">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">3</div>
-                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Book and move</h3>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">3. Your possession dates</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Accept the quote that works best for you. Your driver will arrive on the scheduled day to handle your move safely and efficiently.
+                    Gaps between move-out and possession dates can add timeline delays, but most local moves are completed within a single working day.
                   </p>
                 </div>
               </div>
@@ -286,43 +286,43 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Meet some of our drivers</h2>
-                <p className="text-lg text-muted-foreground">Experienced professionals ready to help you move.</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Moving Easy Limited branches</h2>
+                <p className="text-lg text-muted-foreground">Our team supports moves across Auckland and throughout New Zealand.</p>
               </div>
               <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white transition-colors">
-                View all drivers
+                View all services
               </Button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <OperatorCard 
-                name="Mike Taylor"
-                location="Auckland Central"
-                truckType="5T Box Truck"
+                name="Auckland"
+                location="Manukau"
+                truckType="Household Moving"
                 rating={4.9}
                 reviews={127}
-                bio="10+ years experience moving furniture in Auckland. I pride myself on being careful, punctual, and friendly."
-                initials="MT"
+                bio="We provide furniture moving, freight, and relocation services across Auckland with experienced movers."
+                initials="AK"
                 colorClass="bg-black text-white"
               />
               <OperatorCard 
-                name="Sarah King"
-                location="Wellington Region"
-                truckType="3T Transit Van"
+                name="Nationwide"
+                location="New Zealand"
+                truckType="Freight Services"
                 rating={4.8}
                 reviews={89}
-                bio="Perfect for apartment moves or TradeMe pickups. Fast, efficient service around Wellington and the Hutt Valley."
-                initials="SK"
+                bio="Inside and outside Auckland, we connect you with reliable movers for interstate and outer state relocations."
+                initials="NZ"
                 colorClass="bg-zinc-800 text-white"
               />
               <OperatorCard 
-                name="Dave Larsen"
-                location="Christchurch"
-                truckType="8T Furniture Truck"
+                name="Customer Support"
+                location="Contact Us"
+                truckType="Booking Assistance"
                 rating={5.0}
                 reviews={203}
-                bio="Inter-city specialist. If you're moving house across the South Island, my large truck can handle full family homes."
-                initials="DL"
+                bio="For general enquiries and bookings, our team is ready to assist with your next move."
+                initials="ME"
                 colorClass="bg-zinc-600 text-white"
               />
             </div>
@@ -332,14 +332,14 @@ export default function HomePage() {
         {/* H) RESOURCES & TIPS */}
         <section className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">Moving resources & tips</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">Additional services</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { title: "Ultimate Moving Checklist", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" },
-                { title: "How to Pack Fragile Items", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" },
-                { title: "Moving Costs Guide 2025", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
-                { title: "Preparing Your Pets for a Move", img: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80" }
+                { title: "Lawn Mowing Services", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" },
+                { title: "Cleaning Services", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" },
+                { title: "Make a Booking", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
+                { title: "Contact Us", img: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80" }
               ].map((article, i) => (
                 <div key={i} className="group cursor-pointer">
                   <div className="overflow-hidden rounded-xl mb-4 border border-border">
@@ -356,11 +356,11 @@ export default function HomePage() {
         <section className="py-28 bg-[#0a0a0a] text-center px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
-              Ready to move?<br/>Get free quotes in minutes.
+              Ready to move?<br/>Book your move today.
             </h2>
-            <Link href="/quote">
+            <Link href="/booking">
               <Button size="lg" className="h-16 px-10 text-xl font-bold bg-white text-black hover:bg-white/90 shadow-xl rounded-xl">
-                Post your move
+                Make a booking
               </Button>
             </Link>
           </div>

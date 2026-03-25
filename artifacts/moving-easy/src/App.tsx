@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import QuoteFormPage from "@/pages/QuoteFormPage";
+import BookingPage from "@/pages/BookingPage";
+import BranchesPage from "@/pages/BranchesPage";
 
 // Initialize React Query client
 const queryClient = new QueryClient({
@@ -21,6 +23,8 @@ function Router() {
     <Switch>
       <Route path="/" component={HomePage} />
       <Route path="/quote" component={QuoteFormPage} />
+      <Route path="/booking" component={BookingPage} />
+      <Route path="/branches" component={BranchesPage} />
       <Route component={NotFound} />
     </Switch>
   );
