@@ -258,7 +258,7 @@ export default function HomePage() {
                 <div className="w-full md:w-1/2 relative">
                   <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform rotate-2"></div>
                   <img 
-                    src="https://images.unsplash.com/photo-1616627986114-3c1d0d3ee8b1?w=1200&q=80&auto=format&fit=crop" 
+                    src="https://images.pexels.com/photos/4246120/pexels-photo-4246120.jpeg?auto=compress&cs=tinysrgb&w=1200" 
                     alt="Packed boxes ready for transport" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
                   />
@@ -349,8 +349,8 @@ export default function HomePage() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { title: "Lawn Mowing Services", img: "https://images.unsplash.com/photo-1599685315640-9ceab2a6a5c0?w=1200&q=80&auto=format&fit=crop" },
-                { title: "Cleaning Services", img: "https://images.unsplash.com/photo-1581579184683-0b7f4b9b6b76?w=1200&q=80&auto=format&fit=crop" },
+                { title: "Lawn Mowing Services", img: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=1200&q=80&auto=format&fit=crop" },
+                { title: "Cleaning Services", img: "https://images.pexels.com/photos/4108711/pexels-photo-4108711.jpeg?auto=compress&cs=tinysrgb&w=1200" },
                 { title: "Make a Booking", img: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=1200&q=80&auto=format&fit=crop" },
                 { title: "Contact Us", img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80&auto=format&fit=crop" }
               ].map((article, i) => (
