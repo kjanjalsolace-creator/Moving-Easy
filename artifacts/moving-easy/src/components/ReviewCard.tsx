@@ -18,7 +18,7 @@ export function ReviewCard({ name, location, rating, text, date }: ReviewCardPro
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className={`h-4 w-4 ${i < rating ? "text-secondary fill-secondary" : "text-muted stroke-muted-foreground"}`}
+              className={`h-4 w-4 ${i < rating ? "text-foreground fill-foreground" : "text-muted stroke-muted-foreground"}`}
             />
           ))}
         </div>

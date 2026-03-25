@@ -1,5 +1,22 @@
 import { Link } from "wouter";
-import { MapPin, Calendar, Truck, ArrowRight, ShieldCheck, Clock, Users, Banknote } from "lucide-react";
+import { 
+  MapPin, 
+  Calendar, 
+  ArrowRight, 
+  ShieldCheck, 
+  Home, 
+  Building2, 
+  Briefcase, 
+  Sofa, 
+  Truck, 
+  PackageOpen, 
+  Music, 
+  Trash2,
+  MessageSquare,
+  BadgeDollarSign,
+  Map,
+  Star
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Navbar } from "@/components/Navbar";
@@ -9,302 +26,125 @@ import { ReviewCard } from "@/components/ReviewCard";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col font-sans">
+    <div className="min-h-screen bg-white flex flex-col font-sans text-foreground">
       <Navbar />
 
-      <main className="flex-grow">
-        {/* HERO SECTION */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-          {/* Background Image & Overlay */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/hero-bg.png`} 
-              alt="Moving Easy Trucks" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-900/80 to-slate-900/70" />
-          </div>
+      <main className="flex-grow pt-20">
+        {/* A) HERO SECTION */}
+        <section className="py-20 md:py-32 bg-white relative">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight mb-6 max-w-4xl leading-tight">
+              New Zealand's expert way to move for less
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl">
+              Connect directly with verified truck owner-operators.
+            </p>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl">
-              <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-white backdrop-blur-sm border border-white/20 text-sm font-medium mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                New Zealand's #1 Moving Marketplace
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-in fade-in slide-in-from-bottom-5 duration-700">
-                Connect with trusted truck owner-operators. <br className="hidden md:block"/>
-                <span className="text-secondary">Get quotes in minutes.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
-                Deal directly with experienced local drivers for affordable, flexible moving. No middlemen, no hidden fees, just great service.
-              </p>
-
-              {/* Quick Quote Widget */}
-              <div className="bg-background rounded-2xl p-2 md:p-3 shadow-xl border border-border/50 max-w-4xl flex flex-col md:flex-row gap-2 md:gap-3 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
-                <div className="flex-1 relative">
-                  <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                  <Input 
-                    placeholder="Moving from..." 
-                    className="pl-10 h-14 border-0 bg-muted/50 focus-visible:ring-1 focus-visible:bg-background text-base rounded-xl"
-                  />
-                </div>
-                <div className="hidden md:flex items-center justify-center text-muted-foreground/30">
-                  <ArrowRight className="h-5 w-5" />
-                </div>
-                <div className="flex-1 relative">
-                  <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                  <Input 
-                    placeholder="Moving to..." 
-                    className="pl-10 h-14 border-0 bg-muted/50 focus-visible:ring-1 focus-visible:bg-background text-base rounded-xl"
-                  />
-                </div>
-                <div className="flex-1 relative hidden sm:block">
-                  <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
-                  <Input 
-                    type="date"
-                    className="pl-10 h-14 border-0 bg-muted/50 focus-visible:ring-1 focus-visible:bg-background text-base rounded-xl text-foreground"
-                  />
-                </div>
-                <Link href="/quote">
-                  <Button className="h-14 px-8 w-full md:w-auto bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg rounded-xl shadow-lg hover:-translate-y-0.5 transition-all">
-                    Get Quotes
-                  </Button>
-                </Link>
+            {/* Quick Quote Widget */}
+            <div className="bg-white p-3 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-border/50 max-w-4xl w-full flex flex-col md:flex-row gap-3">
+              <div className="flex-1 relative">
+                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Input 
+                  placeholder="Moving from..." 
+                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl"
+                />
               </div>
-
-              <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium text-white/70">
-                <div className="flex items-center gap-1.5 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">
-                  <CheckIcon className="h-4 w-4 text-secondary" /> 2,400+ Moves
-                </div>
-                <div className="flex items-center gap-1.5 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">
-                  <CheckIcon className="h-4 w-4 text-secondary" /> 500+ Verified Drivers
-                </div>
-                <div className="flex items-center gap-1.5 bg-black/20 rounded-full px-3 py-1 backdrop-blur-sm">
-                  <StarIcon className="h-4 w-4 text-yellow-400 fill-yellow-400" /> 4.8 Avg Rating
-                </div>
+              <div className="flex-1 relative">
+                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Input 
+                  placeholder="Moving to..." 
+                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl"
+                />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* HOW IT WORKS SECTION */}
-        <section className="py-20 bg-muted/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl font-bold text-foreground mb-4">How Moving Easy Works</h2>
-              <p className="text-muted-foreground text-lg">
-                We've simplified the process of finding reliable transport. Three easy steps to get you moving.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-              {/* Connecting line for desktop */}
-              <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-border border-dashed border-2 border-border/50 z-0"></div>
-              
-              <div className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-24 h-24 bg-background rounded-full border-4 border-primary/20 flex items-center justify-center shadow-lg mb-6 group-hover:border-primary group-hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <MapPin className="h-8 w-8 text-primary" />
-                  </div>
-                </div>
-                <div className="bg-primary text-primary-foreground text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center absolute top-0 right-1/2 translate-x-12 -translate-y-2 shadow-sm">1</div>
-                <h3 className="text-xl font-bold mb-3">Tell us about your move</h3>
-                <p className="text-muted-foreground">Enter your pickup and drop-off locations, preferred dates, and what you need to move.</p>
+              <div className="flex-1 relative hidden sm:block">
+                <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
+                <Input 
+                  type="date"
+                  className="pl-12 h-14 border-border bg-muted/20 focus-visible:ring-black text-base rounded-xl text-foreground"
+                />
               </div>
-
-              <div className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-24 h-24 bg-background rounded-full border-4 border-secondary/20 flex items-center justify-center shadow-lg mb-6 group-hover:border-secondary group-hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center">
-                    <Truck className="h-8 w-8 text-secondary" />
-                  </div>
-                </div>
-                <div className="bg-secondary text-secondary-foreground text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center absolute top-0 right-1/2 translate-x-12 -translate-y-2 shadow-sm">2</div>
-                <h3 className="text-xl font-bold mb-3">Get quotes from drivers</h3>
-                <p className="text-muted-foreground">Verified truck owner-operators operating in your area will send you competitive quotes directly.</p>
-              </div>
-
-              <div className="relative z-10 flex flex-col items-center text-center group">
-                <div className="w-24 h-24 bg-background rounded-full border-4 border-primary/20 flex items-center justify-center shadow-lg mb-6 group-hover:border-primary group-hover:scale-105 transition-all duration-300">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                    <ShieldCheck className="h-8 w-8 text-primary" />
-                  </div>
-                </div>
-                <div className="bg-primary text-primary-foreground text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center absolute top-0 right-1/2 translate-x-12 -translate-y-2 shadow-sm">3</div>
-                <h3 className="text-xl font-bold mb-3">Book and move</h3>
-                <p className="text-muted-foreground">Compare profiles, read reviews, and book the driver that best fits your budget and needs.</p>
-              </div>
-            </div>
-            
-            <div className="mt-12 text-center">
-              <Link href="/quote">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary/5 font-semibold px-8 rounded-full">
-                  Start Your Request <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/quote" className="md:w-auto w-full">
+                <Button className="h-14 px-8 w-full bg-black hover:bg-black/90 text-white font-semibold text-lg rounded-xl transition-all">
+                  Get Quotes
                 </Button>
               </Link>
             </div>
-          </div>
-        </section>
 
-        {/* WHY CHOOSE US */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Why book through Moving Easy?</h2>
-                <p className="text-lg text-muted-foreground mb-10">
-                  We empower independent drivers and provide customers with a transparent, cost-effective alternative to traditional moving companies.
-                </p>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                        <Banknote className="h-5 w-5 text-primary" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Lower Prices</h4>
-                      <p className="text-sm text-muted-foreground">Deal directly with drivers. No corporate overheads means better rates for you.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                        <Users className="h-5 w-5 text-blue-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Verified Operators</h4>
-                      <p className="text-sm text-muted-foreground">Every driver is vetted. Read real reviews from previous customers before booking.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
-                        <Clock className="h-5 w-5 text-secondary" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Flexible Options</h4>
-                      <p className="text-sm text-muted-foreground">Find drivers available on your exact dates with the right truck size for the job.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 mt-1">
-                      <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
-                        <ShieldCheck className="h-5 w-5 text-purple-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg mb-2">Secure & Transparent</h4>
-                      <p className="text-sm text-muted-foreground">Clear communication, no hidden fees. You know exactly who is turning up on moving day.</p>
-                    </div>
-                  </div>
+            {/* Trust signals */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-sm font-medium text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 text-black fill-black" />
+                  ))}
                 </div>
+                <span className="text-black font-semibold">4.8/5</span> Rating
               </div>
-              
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl transform rotate-3 scale-105 -z-10"></div>
-                {/* landing page hero scenic mountain landscape */}
-                <img 
-                  src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&h=600&fit=crop" 
-                  alt="Mover carrying a box" 
-                  className="rounded-3xl shadow-xl w-full object-cover h-[500px]"
-                />
-                
-                {/* Floating trust badge */}
-                <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-xl border border-border flex items-center gap-4 animate-in slide-in-from-bottom duration-700 delay-300">
-                  <div className="bg-secondary/10 p-3 rounded-full text-secondary">
-                    <StarIcon className="h-6 w-6 fill-secondary" />
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-black" />
+                <span className="text-black font-semibold">2,400+</span> moves completed
+              </div>
+              <div className="flex items-center gap-2">
+                <Truck className="h-5 w-5 text-black" />
+                <span className="text-black font-semibold">500+</span> drivers
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* B) MOST POPULAR SERVICES */}
+        <section className="py-20 bg-muted/10 border-t border-border/50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center tracking-tight">Our most popular services</h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { icon: Home, label: "House Moving" },
+                { icon: Building2, label: "Apartment Moving" },
+                { icon: Briefcase, label: "Office Relocation" },
+                { icon: Sofa, label: "Furniture Removal" },
+                { icon: Truck, label: "Man with a Van" },
+                { icon: PackageOpen, label: "TradeMe Delivery" },
+                { icon: Music, label: "Piano Moving" },
+                { icon: Trash2, label: "Rubbish Removal" },
+              ].map((service, i) => (
+                <div key={i} className="bg-white p-6 rounded-xl border border-border flex flex-col items-center justify-center text-center gap-4 hover:shadow-md transition-shadow cursor-pointer group">
+                  <div className="p-3 bg-muted/30 rounded-full group-hover:bg-black group-hover:text-white transition-colors">
+                    <service.icon className="h-6 w-6" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground font-medium">Customer Rating</p>
-                    <p className="text-xl font-bold">4.8/5.0</p>
-                  </div>
+                  <h3 className="font-semibold text-sm md:text-base">{service.label}</h3>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* OWNER OPERATORS SHOWCASE */}
-        <section className="py-20 bg-muted/30 border-y border-border/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl font-bold mb-4">Meet some of our drivers</h2>
-                <p className="text-muted-foreground text-lg">
-                  Browse profiles of independent operators ready to help with your move.
-                </p>
-              </div>
-              <Button variant="link" className="text-primary font-semibold hover:underline px-0">
-                View all drivers <ArrowRight className="ml-1 h-4 w-4" />
-              </Button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <OperatorCard 
-                name="Mike Taylor"
-                location="Auckland Central"
-                truckType="5T Box Truck with Tail Lift"
-                rating={4.9}
-                reviews={127}
-                bio="10+ years experience moving furniture in Auckland. I pride myself on being careful, punctual, and friendly. Blankets and ties included."
-                initials="MT"
-                colorClass="bg-blue-600"
-              />
-              <OperatorCard 
-                name="Sarah King"
-                location="Wellington Region"
-                truckType="3T Transit Van"
-                rating={4.8}
-                reviews={89}
-                bio="Perfect for 1-2 bedroom apartment moves or TradeMe pickups. Fast, efficient service around Wellington and the Hutt Valley."
-                initials="SK"
-                colorClass="bg-emerald-600"
-              />
-              <OperatorCard 
-                name="Dave Larsen"
-                location="Christchurch / South Island"
-                truckType="8T Furniture Truck"
-                rating={5.0}
-                reviews={203}
-                bio="Inter-city specialist. If you're moving house across the South Island, my large truck and experienced offsider can handle full family homes."
-                initials="DL"
-                colorClass="bg-orange-600"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* REVIEWS */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* C) CUSTOMER REVIEWS */}
+        <section className="py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Loved by Kiwis nationwide</h2>
-              <p className="text-muted-foreground text-lg">Don't just take our word for it.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">What do our customers say?</h2>
+              <p className="text-lg text-muted-foreground">4.8 out of 5 from 500+ reviews</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <ReviewCard 
                 name="Jane R."
-                location="Moved to Auckland CBD"
+                location="Auckland"
                 rating={5}
                 date="2 weeks ago"
                 text="Made our Auckland move so easy! Mike was professional and careful with our furniture. Got 5 quotes in under an hour and chose the best fit."
               />
               <ReviewCard 
                 name="Tom H."
-                location="Moved to Lower Hutt"
+                location="Wellington"
                 rating={5}
                 date="1 month ago"
                 text="Sarah was punctual and incredibly efficient. Saved $400 compared to the traditional removal company we used last time. Highly recommend!"
               />
               <ReviewCard 
                 name="Emma L."
-                location="Moved to Rolleston"
+                location="Christchurch"
                 rating={4}
                 date="3 months ago"
                 text="Used Moving Easy twice now. Always great drivers, always on time, always reasonable prices. The communication directly with the driver gives peace of mind."
@@ -313,70 +153,222 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* BOTTOM CTA */}
-        <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-          {/* Abstract background elements */}
-          <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[400px] h-[400px] bg-black/10 rounded-full blur-3xl"></div>
-
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to make your move easier?</h2>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-              Join thousands of New Zealanders who've found affordable, reliable movers through our platform. Post your job for free today.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/quote">
-                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg font-bold bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-lg hover:-translate-y-1 transition-all">
-                  Get Free Quotes Now
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto h-14 px-8 text-lg font-bold bg-transparent border-white text-white hover:bg-white/10">
-                Register as a Driver
-              </Button>
+        {/* D) GO ABOVE & BEYOND */}
+        <section className="py-24 bg-[#0a0a0a] text-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center tracking-tight">We go above and beyond</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+              <div className="flex flex-col items-center text-center">
+                <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <ShieldCheck className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Verified operators</h3>
+                <p className="text-white/70">Every driver on our platform is carefully vetted for your peace of mind.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <MessageSquare className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Direct communication</h3>
+                <p className="text-white/70">Chat directly with drivers to discuss details before you book.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <BadgeDollarSign className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Transparent pricing</h3>
+                <p className="text-white/70">No hidden fees or surprise charges. The quote you accept is what you pay.</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <div className="h-14 w-14 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <Map className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">NZ-wide coverage</h3>
+                <p className="text-white/70">From Cape Reinga to Bluff, we've got independent movers ready to help.</p>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* E) ONE SEAMLESS EXPERIENCE (STATS BANNER) */}
+        <section className="py-16 bg-white border-b border-border/50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border/30">
+              <div className="text-center px-4">
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">2,400+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Moves Completed</p>
+              </div>
+              <div className="text-center px-4">
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">500+</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Active Drivers</p>
+              </div>
+              <div className="text-center px-4">
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">4.8<span className="text-2xl">★</span></p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Average Rating</p>
+              </div>
+              <div className="text-center px-4">
+                <p className="text-4xl md:text-5xl font-bold text-black mb-2">NZ</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Wide Coverage</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* F) HOW IT WORKS */}
+        <section className="py-24 bg-white overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-20 text-center tracking-tight">How Moving Easy works</h2>
+            
+            <div className="space-y-24">
+              {/* Step 1 */}
+              <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div className="w-full md:w-1/2 relative">
+                  <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform -rotate-2"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" 
+                    alt="Create a listing" 
+                    className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
+                  />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">1</div>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Create your listing</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Tell us what you're moving, where it's going, and when. Add photos and details to get the most accurate quotes. It's completely free to post.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
+                <div className="w-full md:w-1/2 relative">
+                  <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform rotate-2"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&q=80" 
+                    alt="Compare quotes" 
+                    className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
+                  />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">2</div>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Compare quotes</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Verified owner-operators in your area will send you competitive quotes. Review their profiles, read past customer feedback, and message them directly with any questions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div className="w-full md:w-1/2 relative">
+                  <div className="absolute -inset-4 bg-muted/20 rounded-3xl -z-10 transform -rotate-2"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80" 
+                    alt="Book and move" 
+                    className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-border/50"
+                  />
+                </div>
+                <div className="w-full md:w-1/2">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black text-white text-xl font-bold mb-6">3</div>
+                  <h3 className="text-3xl font-bold mb-4 tracking-tight">Book and move</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Accept the quote that works best for you. Your driver will arrive on the scheduled day to handle your move safely and efficiently.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* G) MEET THE DRIVERS */}
+        <section className="py-24 bg-muted/10 border-t border-border/50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">Meet some of our drivers</h2>
+                <p className="text-lg text-muted-foreground">Experienced professionals ready to help you move.</p>
+              </div>
+              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white transition-colors">
+                View all drivers
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <OperatorCard 
+                name="Mike Taylor"
+                location="Auckland Central"
+                truckType="5T Box Truck"
+                rating={4.9}
+                reviews={127}
+                bio="10+ years experience moving furniture in Auckland. I pride myself on being careful, punctual, and friendly."
+                initials="MT"
+                colorClass="bg-black text-white"
+              />
+              <OperatorCard 
+                name="Sarah King"
+                location="Wellington Region"
+                truckType="3T Transit Van"
+                rating={4.8}
+                reviews={89}
+                bio="Perfect for apartment moves or TradeMe pickups. Fast, efficient service around Wellington and the Hutt Valley."
+                initials="SK"
+                colorClass="bg-zinc-800 text-white"
+              />
+              <OperatorCard 
+                name="Dave Larsen"
+                location="Christchurch"
+                truckType="8T Furniture Truck"
+                rating={5.0}
+                reviews={203}
+                bio="Inter-city specialist. If you're moving house across the South Island, my large truck can handle full family homes."
+                initials="DL"
+                colorClass="bg-zinc-600 text-white"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* H) RESOURCES & TIPS */}
+        <section className="py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">Moving resources & tips</h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { title: "Ultimate Moving Checklist", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" },
+                { title: "How to Pack Fragile Items", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" },
+                { title: "Moving Costs Guide 2025", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
+                { title: "Preparing Your Pets for a Move", img: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=600&q=80" }
+              ].map((article, i) => (
+                <div key={i} className="group cursor-pointer">
+                  <div className="overflow-hidden rounded-xl mb-4 border border-border">
+                    <img src={article.img} alt={article.title} className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <h3 className="font-semibold text-lg group-hover:underline decoration-2 underline-offset-4">{article.title}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* I) BOTTOM CTA */}
+        <section className="py-28 bg-[#0a0a0a] text-center px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+              Ready to move?<br/>Get free quotes in minutes.
+            </h2>
+            <Link href="/quote">
+              <Button size="lg" className="h-16 px-10 text-xl font-bold bg-white text-black hover:bg-white/90 shadow-xl rounded-xl">
+                Post your move
+              </Button>
+            </Link>
+          </div>
+        </section>
+
       </main>
 
       <Footer />
     </div>
   );
-}
-
-function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  )
-}
-
-function StarIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-    </svg>
-  )
 }
